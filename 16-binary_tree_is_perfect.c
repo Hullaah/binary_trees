@@ -54,7 +54,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 	depth = height_of_tree(tree);
-	printf("Depth of tree is: %d\n", depth);
 	if (depth == 0)
 		return (1);
 	return (perfect_helper(tree, depth));
