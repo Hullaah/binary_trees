@@ -17,7 +17,7 @@ size_t depth(const binary_tree_t *node)
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 const binary_tree_t *second)
 {
-	int distance;
+	int distance, i;
 	binary_tree_t *ancestor;
 
 	if (!first || !second)
@@ -27,14 +27,14 @@ const binary_tree_t *second)
 	{
 		ancestor = first->parent;
 		distance = -distance;
-		for (int i = 1; i < distance; i++)
+		for (i = 1; i < distance; i++)
 			ancestor = ancestor->parent;
 
 	}
 	else
 	{
 		ancestor = second->parent;
-		for (int i = 1; i < distance; i++)
+		for (i = 1; i < distance; i++)
 			ancestor = ancestor->parent;
 	}
 	return (ancestor);
