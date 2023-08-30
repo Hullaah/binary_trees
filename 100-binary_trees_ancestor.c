@@ -23,6 +23,10 @@ const binary_tree_t *second)
 	if (!first || !second)
 		return (NULL);
 	distance = depth(first) - depth(second);
+	if (first->parent == second)
+		return (first->parent);
+	if (second->parent == first)
+		return (second->parent);
 	if (distance < 0)
 	{
 		ancestor = first->parent;
